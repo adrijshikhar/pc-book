@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package adrijshikhar.pc_book;
 
+option go_package = ".;pb";
+
 message Memory {
   enum Unit {
     UNKNOWN = 0; BIT = 1; BYTE = 2; KILOBYTE = 3; MEGABYTE = 4; GIGABYTE = 5;
