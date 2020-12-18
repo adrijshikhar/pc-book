@@ -5,6 +5,7 @@
 github.com/golang/protobuf/proto
 # github.com/google/uuid v1.1.1
 ## explicit
+github.com/google/uuid
 # github.com/grpc-ecosystem/grpc-gateway/v2 v2.0.0-beta.3
 ## explicit
 # github.com/jinzhu/copier v0.0.0-20190924061706-b57f9002281a
@@ -46,3 +47,4 @@ google.golang.org/protobuf/reflect/protoreflect
 google.golang.org/protobuf/reflect/protoregistry
 google.golang.org/protobuf/runtime/protoiface
 google.golang.org/protobuf/runtime/protoimpl
+google.golang.org/protobuf/types/known/timestamppb
