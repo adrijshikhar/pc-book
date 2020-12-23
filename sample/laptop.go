@@ -34,3 +34,26 @@ func NewCPU() *pb.CPU {
 
 	return cpu
 }
+
+// NewGPU returns a new sample GPU
+func NewGPU() *pb.GPU {
+	brand := randomGPUBrand()
+	name := randomGPUName(brand)
+
+	minGhz := randomFloat64(1.0, 1.5)
+	maxGhz := randomFloat64(minGhz, 2.0)
+	memGB := randomInt(2, 6)
+
+	gpu := &pb.GPU{
+		Brand:  brand,
+		Name:   name,
+		MinGhz: minGhz,
+		MaxGhz: maxGhz,
+		Memory: &pb.Memory{
+			Value: uint32(memGB),
+			Unit:  pb.Memory_GIGABYTE,
+		},
+	}
+
+	return gpu
+}

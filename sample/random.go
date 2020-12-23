@@ -72,3 +72,25 @@ func randomCPUName(brand string) string {
 		"Ryzen 3 PRO 3200GE",
 	)
 }
+
+func randomGPUBrand() string {
+	return randomStringFromSet("Nvidia", "AMD")
+}
+
+func randomGPUName(brand string) string {
+	if brand == "Nvidia" {
+		return randomStringFromSet(
+			"RTX 2060",
+			"RTX 2070",
+			"GTX 1660-Ti",
+			"GTX 1070",
+		)
+	}
+
+	return randomStringFromSet(
+		"RX 590",
+		"RX 580",
+		"RX 5700-XT",
+		"RX Vega-56",
+	)
+}
