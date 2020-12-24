@@ -57,3 +57,15 @@ func NewGPU() *pb.GPU {
 
 	return gpu
 }
+
+// NewRAM returns a new sample RAM
+func NewRAM() *pb.Memory {
+	memGB := randomInt(4, 64)
+
+	ram := &pb.Memory{
+		Value: uint32(memGB),
+		Unit:  pb.Memory_GIGABYTE,
+	}
+
+	return ram
+}
