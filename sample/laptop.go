@@ -82,3 +82,18 @@ func NewSSD() *pb.Storage {
 
 	return ssd
 }
+
+// NewHDD returns a new sample HDD
+func NewHDD() *pb.Storage {
+	memTB := randomInt(1, 6)
+
+	hdd := &pb.Storage{
+		Driver: pb.Storage_HDD,
+		Memory: &pb.Memory{
+			Value: uint32(memTB),
+			Unit:  pb.Memory_TERABYTE,
+		},
+	}
+
+	return hdd
+}
