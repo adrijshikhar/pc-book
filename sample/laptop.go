@@ -97,3 +97,15 @@ func NewHDD() *pb.Storage {
 
 	return hdd
 }
+
+// NewScreen returns a new sample Screen
+func NewScreen() *pb.Screen {
+	screen := &pb.Screen{
+		SizeInch:   randomFloat32(13, 17),
+		Resolution: randomScreenResolution(),
+		Panel:      randomScreenPanel(),
+		Multitouch: randomBool(),
+	}
+
+	return screen
+}
