@@ -1,6 +1,9 @@
 package sample
 
-import "github.com/adrijshikhar/pc-book/pb"
+import (
+	"github.com/adrijshikhar/pc-book/pb"
+	"github.com/golang/protobuf/ptypes"
+)
 
 // NewKeyboard returns a new sample keyboard
 func NewKeyboard() *pb.Keyboard {
@@ -108,4 +111,30 @@ func NewScreen() *pb.Screen {
 	}
 
 	return screen
+}
+
+// NewLaptop returns a new sample Laptop
+func NewLaptop() *pb.Laptop {
+	brand := randomLaptopBrand()
+	name := randomLaptopName(brand)
+
+	laptop := &pb.Laptop{
+		Id:       randomID(),
+		Brand:    brand,
+		Name:     name,
+		Cpu:      NewCPU(),
+		Ram:      NewRAM(),
+		Gpus:     []*pb.GPU{NewGPU()},
+		Storages: []*pb.Storage{NewSSD(), NewHDD()},
+		Screen:   NewScreen(),
+		Keyboard: NewKeyboard(),
+		Weight: &pb.Laptop_WeightKg{
+			WeightKg: randomFloat64(1.0, 3.0),
+		},
+		PriceUsd:    randomFloat64(1500, 3500),
+		ReleaseYear: uint32(randomInt(2015, 2019)),
+		UpdatedAt:   ptypes.TimestampNow(),
+	}
+
+	return laptop
 }

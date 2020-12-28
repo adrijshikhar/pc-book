@@ -112,3 +112,18 @@ func randomScreenPanel() pb.Screen_Panel {
 	}
 	return pb.Screen_OLED
 }
+
+func randomLaptopBrand() string {
+	return randomStringFromSet("Apple", "Dell", "Lenovo")
+}
+
+func randomLaptopName(brand string) string {
+	switch brand {
+	case "Apple":
+		return randomStringFromSet("Macbook Air", "Macbook Pro")
+	case "Dell":
+		return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware")
+	default:
+		return randomStringFromSet("Thinkpad X1", "Thinkpad P1", "Thinkpad P53")
+	}
+}
